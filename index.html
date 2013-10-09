@@ -1,99 +1,63 @@
----
-layout: default
-title: The Daily Bread
----
+<!DOCTYPE html>
+<html>
 
-<script>
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Gami-.github.io : Where does my money go for Oshamanbe" />
 
-yepnope({
-  load: [
-    // 'http://wheredoesmymoneygo.org/wp-content/themes/wdmmg/wdmmg.css',
-    'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/ui-lightness/jquery-ui.css',
-    'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js',
-    '/js/libs/base64.js',
-    '/js/libs/underscore.js',
-    '/js/libs/raphael-min.js',
-    '/js/aggregator.js',
-    '/css/dailybread.css',
-    '/js/setting.js?20120707',
-    '/js/dailybread.js?20120707'
-  ],
-  complete: function() {
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    (function ($) {
+    <title>Gami-.github.io</title>
+  </head>
 
-      $(function () {
+  <body>
 
-        $('#preloader .txt').html('loading data');
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/gami-">View on GitHub</a>
 
-       var db = new OpenSpending.DailyBread($('#dailybread'));
-       new OpenSpending.Aggregator({
-           apiUrl: 'http://openspending.org/api',
-           //localApiCache: 'aggregate.json',
-           dataset: OpenSpending.identifier,
-           drilldowns: ['Category', 'Subcategory'],
-           cuts: ['year:' + OpenSpending.year],
-           rootNodeLabel: 'Total',
-           breakdown: 'Subcategory',
-           callback: function(data) {
+          <h1 id="project_title">Gami-.github.io</h1>
+          <h2 id="project_tagline">Where does my money go for Oshamanbe</h2>
 
-            $('#content-wrap').show();
-            $('#preloader').remove();
-
-            db.setDataFromAggregator(data, ['unknown']);
-            db.setIconLookup(function(name) {
-              var style = OpenSpending.Styles.Cofog[name];
-              if (style != undefined) {
-               return style['icon'];
-              }
-              return 'icons/unknown.svg';
-            });
-            db.draw();
-           }
-        });
-
-        OpenSpending.renderDependentTypes(db);
-      });
-    })(jQuery)
-  }
-});
-
-
-</script>
-
-<div id="dailybread">
-  <!--
-  <h2 class="page-header">The Daily Bread <small> Costs for the British Taxpayer per Day</small></h2>
-  -->
-  <div>
-    <h2 style="width:240px;display:inline-block;vertical-align:top;">あなたの世帯タイプは？</h2>
-    <div id="select-dependents-type" style="width:450px;display:inline-block;">
-      <div class="single">単身世帯</div>
-      <div class="family">扶養有り</div>
+        </header>
     </div>
-    <br style="clear:both;">
-  </div>
 
-  <div id="preloader" style="text-align: center; padding: 100px"><img src="img/ajax-loader.gif" style="vertical-align:top" /> &nbsp;<span class="txt">loading javascript libraries</span></div>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="%E4%BF%BA%E3%81%AE%E3%82%BC%E3%83%8B%E3%81%AF%E3%81%A9%E3%81%93%E8%A1%8C%E3%81%A3%E3%81%9F-for-%E9%95%B7%E4%B8%87%E9%83%A8" class="anchor" href="#%E4%BF%BA%E3%81%AE%E3%82%BC%E3%83%8B%E3%81%AF%E3%81%A9%E3%81%93%E8%A1%8C%E3%81%A3%E3%81%9F-for-%E9%95%B7%E4%B8%87%E9%83%A8"><span class="octicon octicon-link"></span></a>俺のゼニはどこ行った for 長万部</h1>
 
-  <div id="content-wrap" style="display:none">
-    <div id="db-topbar" class="layout-row layout-3col-15-70-15">
-     <div id="db-salary" class="layout-col layout-col-1">
-      <h2>年収</h2>
-      <p>&yen;4,000,000</p>
-     </div>
+<p>wheredoesmymoney.orgの長万部町バージョンです．</p>
 
-     <div id="db-slider" class="layout-col layout-col-2">
-      <h2>あなたの年間収入を選んでください</h2>
-      <div class="wdmmg-slider"></div>
-     </div>
+<p><a href="http://spending.jp/">http://spending.jp/</a> で稼働しているサイトのソースコードです。</p>
 
-     <div id="db-tax" class="layout-col layout-col-3">
-      <h2>あなたの長万部町民税（年間）</h2>
-      <p>&yen;31.12</p>
-     </div>
-    </div><!-- /#db-topbar -->
-  </div>
-  あなたの町民税は、1日当たり、どこで、いくら使われているか？
-</div><!-- /#dailybread -->
+<p>Where Does My Money Go? β版は、長万部町民が長万部町に納めている税を対象として構築したものです。自分の年間総収入をスライドで設定し、単身世帯か扶養一人世帯かを選択すると、給与所得者であるという前提で、長万部町に納めている税金年総額と分野毎に一日当たり支払っている税額が表示されます。</p>
 
+<p>なお、このサイトは、公共データのオープン化によって、地域社会を変え、日本社会を変え、世界にも影響を与え、貢献して行こうという思いを持って集まった以下のメンバーによって構築、運営されています。</p>
+
+<p>Team for OSHAMANBE
+　　室谷　良平(Ryohei Muroya)  ,Facebook: <a href="https://www.facebook.com/rmuroya">https://www.facebook.com/rmuroya</a> 
+　　七尾　昌昭(Masaaki Nanao)  ,Facebook: <a href="https://www.facebook.com/masaaki.nanao">https://www.facebook.com/masaaki.nanao</a>
+　　水上　光　(Hikaru Mizugami),Facebook: <a href="https://www.facebook.com/hikaru.mizugami">https://www.facebook.com/hikaru.mizugami</a></p>
+
+<p>このソースコードは、Open Definition(<a href="http://opendefinition.org/">http://opendefinition.org/</a>) の定義に沿っていれば、どなたでも利用、改変、及び再配布が可能です。
+<a href="http://qiita.com/items/38c186efbd272ef59121">http://qiita.com/items/38c186efbd272ef59121</a>
+に、このソースコードを Fork して独自のサイトを作る為のドキュメントがありますので、是非ご自由にお使いください。
+あなたのサイトを作成したら、是非御連絡や Pull Request をいただければと思います。</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
